@@ -32,6 +32,15 @@ const getSubscriptionStatus = (messEndDate) => {
   }
 };
 
+const toYYYYMMDD = (date) => {
+  if (!date) return null;
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+
 const StudentManager = ({ students, onUpdate, onViewDetails }) => {
   const [filter, setFilter] = useState("Active");
 
@@ -46,10 +55,8 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
   const [reactivatingStudent, setReactivatingStudent] = useState(null);
   const [newStartDate, setNewStartDate] = useState(new Date());
   const [newEndDate, setNewEndDate] = useState(null);
-  const [newMessStartDate, setNewMessStartDate] = useState(
-    new Date().toISOString().split("T")[0]
-  );
-  const [newMessEndDate, setNewMessEndDate] = useState("");
+  const [newMessStartDate, setNewMessStartDate] = useState(new Date());
+  const [newMessEndDate, setNewMessEndDate] = useState(null);
 
   const openRenewModal = (student) => {
     setRenewingStudent(student);
@@ -76,7 +83,7 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
       await axios.put(
         `/api/students/${renewingStudent._id}/renew`,
         {
-          newMessEndDate: newExpiryDate,
+          newMessEndDate: toYYYYMMDD(newExpiryDate),
         },
         config
       );
@@ -96,16 +103,13 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
     try {
       const { token } = JSON.parse(localStorage.getItem("adminInfo"));
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      await axios.post(
-        "/api/students",
-        {
-          name: newName,
-          rollNumber: newRollNumber,
-          messStartDate: newMessStartDate,
-          messEndDate: newMessEndDate,
-        },
-        config
-      );
+      const payload = {
+        name: newName,
+        rollNumber: newRollNumber,
+        messStartDate: toYYYYMMDD(newMessStartDate),
+        messEndDate: toYYYYMMDD(newMessEndDate),
+      };
+      await axios.post("/api/students", payload, config);
 
       toast.success(`Student '${newName}' registered successfully!`);
       setNewName("");
@@ -214,8 +218,8 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
       await axios.put(
         `/api/students/${reactivatingStudent._id}/reactivate`,
         {
-          messStartDate: newStartDate,
-          messEndDate: newEndDate,
+          messStartDate: toYYYYMMDD(newStartDate),
+          messEndDate: toYYYYMMDD(newEndDate),
         },
         config
       );
@@ -442,7 +446,9 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
             </h3>
             <p className="text-sm text-gray-500 mb-4">
               Current expiry:{" "}
-              {new Date(renewingStudent.messEndDate).toLocaleDateString('en-GB')}
+              {new Date(renewingStudent.messEndDate).toLocaleDateString(
+                "en-GB"
+              )}
             </p>
             <div className="space-y-2">
               <label className="block text-sm font-medium">
