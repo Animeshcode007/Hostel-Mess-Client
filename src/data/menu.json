@@ -1,0 +1,37 @@
+[
+  {
+    "day": "Monday (सोमवार)",
+    "lunch": "Aloo, Pithi, Tur Dal, Chawal, Roti, Achar, Salad (आलू, पिठ्ठी, तुवर दाल, चावल, रोटी, अचार, सलाद)",
+    "dinner": "Mungodi, Masur Dal, Chawal, Roti, Hari Chutney (मुंगोडी, मसूर दाल, चावल, रोटी, हरी चटनी)"
+  },
+  {
+    "day": "Tuesday (मंगलवार)",
+    "lunch": "Karela/Bhindi, Chana Dal, Chawal, Roti, Achar, Salad (करेला/भिंडी, चना दाल, चावल, रोटी, अचार, सलाद)",
+    "dinner": "Aloo, Khichdi, Kadi, Roti, Papad (आलू, खिचड़ी, कढ़ी, रोटी, पापड़)"
+  },
+  {
+    "day": "Wednesday (बुधवार)",
+    "lunch": "Bhindhi Moong ki Dal/Tur Dal, Chawal, Roti, Achar, Salad (भिंडी मूंग की दाल/तुवर दाल, चावल, रोटी, अचार, सलाद)",
+    "dinner": "Kathal/Gobhi, Mix Dal, Chawal, Roti, Bundi Raita (कटहल/गोभी, मिक्स दाल, चावल, रोटी, बूंदी रायता)"
+  },
+  {
+    "day": "Thursday (गुरुवार)",
+    "lunch": "Karela/Methi, Tur Dal, Chawal, Roti, Hari Chutney (करेला/मेथी, तुवर दाल, चावल, रोटी, हरी चटनी)",
+    "dinner": "Palak Paneer, Paratha (Aloo, Methi, Plain, Mooli), Chawal, Tamatar ki Chutney, Gulab Jamun/Kheer/Halwa (पालक पनीर, पराठा, चावल, टमाटर की चटनी, गुलाब जामुन/खीर/हलवा)"
+  },
+  {
+    "day": "Friday (शुक्रवार)",
+    "lunch": "Baigan/Aloo Tamatar, Moong Dal, Papad, Chawal, Roti, Achar, Salad (बैंगन/आलू टमाटर, मूंग दाल, पापड़, चावल, रोटी, अचार, सलाद)",
+    "dinner": "Lauki Kofta, Tur Dal, Chawal, Roti, Achar, Salad (लौकी कोफ्ता, तुवर दाल, चावल, रोटी, अचार, सलाद)"
+  },
+  {
+    "day": "Saturday (शनिवार)",
+    "lunch": "Gatte/Phali/Surjana Phali, Masur Dal, Chawal, Roti, Salad, Achar/Chutney (गट्टे/फली/सुरजना फली, मसूर दाल, चावल, रोटी, सलाद, अचार/चटनी)",
+    "dinner": "Lauki Chana Dal, Bundi Raita/Bhajiye, Chawal, Roti, Achar, Salad (लौकी चना दाल, बूंदी रायता/भजिये, चावल, रोटी, अचार, सलाद)"
+  },
+  {
+    "day": "Sunday (रविवार)",
+    "lunch": "Special (संडे स्पेशल)",
+    "dinner": "No Food (कोई भोजन नहीं)"
+  }
+]
