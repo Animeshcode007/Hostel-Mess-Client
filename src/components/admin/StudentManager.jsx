@@ -233,7 +233,7 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
   };
 
   return (
-    <div className="bg-white p-4 sm:p-6 rounded-lg shadow">
+    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg h-full">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
         <h2 className="text-xl font-bold text-gray-800 mb-2 sm:mb-0">
           Manage Students
@@ -323,7 +323,7 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
         </form>
       )}
 
-      <div className="flex items-center space-x-2 border-b mb-3 pb-2">
+      <div className="flex items-center space-x-2 pb-2 overflow-x-auto whitespace-nowrap">
         <Filter size={16} className="text-gray-500" />
         <FilterButton
           label="Active"
@@ -356,7 +356,7 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
         />
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-3">
         {studentsToDisplay.map((student) => {
           const subStatus = getSubscriptionStatus(student.messEndDate);
           const statusStyles = {
@@ -367,7 +367,7 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
           return (
             <div
               key={student._id}
-              className={`flex justify-between items-center p-3 bg-gray-50 rounded-lg ${statusStyles[subStatus]}`}
+              className={`flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:shadow-sm ${statusStyles[subStatus]}`}
             >
               <div
                 onClick={() => onViewDetails(student._id)}
@@ -544,7 +544,7 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
 const FilterButton = ({ label, isActive, onClick }) => (
   <button
     onClick={onClick}
-    className={`px-3 py-1 text-sm rounded-full ${
+    className={`flex-shrink-0 px-4 py-3 text-sm font-medium rounded-full ${
       isActive
         ? "bg-indigo-100 text-indigo-700 font-semibold"
         : "text-gray-600 hover:bg-gray-200"

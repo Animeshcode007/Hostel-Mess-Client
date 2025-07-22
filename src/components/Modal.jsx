@@ -17,19 +17,23 @@ const Modal = ({ isOpen, onClose, title, children }) => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
-            className="relative w-full max-w-4xl p-8 rounded-2xl shadow-xl border border-white/20 bg-white/10 backdrop-blur-lg"
+            className="relative w-full max-w-4xl max-h-[90vh] flex flex-col rounded-2xl shadow-xl border border-white/20 bg-white/10 backdrop-blur-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-gray-300"
-            >
-              <X size={28} />
-            </button>
-            <h2 className="text-3xl font-bold text-center text-white mb-6">
-              {title}
-            </h2>
-            <div className="text-white">{children}</div>
+            <div className="flex-shrink-0 p-4 sm:p-6 border-b border-white/20">
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 text-white hover:text-gray-300"
+              >
+                <X size={28} />
+              </button>
+              <h2 className="text-xl sm:text-3xl font-bold text-center text-white">
+                {title}
+              </h2>
+            </div>
+            <div className="flex-grow p-4 sm:p-6 overflow-y-auto">
+              <div className="text-white">{children}</div>
+            </div>
           </motion.div>
         </motion.div>
       )}

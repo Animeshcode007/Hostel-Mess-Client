@@ -41,10 +41,10 @@ const getSubscriptionStatus = (messEndDate) => {
 
 const DetailRow = ({ icon, label, value }) => (
   <div className="flex items-start py-3 border-b border-gray-200">
-    <div className="flex-shrink-0 w-8 text-gray-500">{icon}</div>
+    <div className="flex-shrink-0 w-8 text-gray-500 pt-1">{icon}</div>
     <div>
-      <p className="text-sm text-gray-500">{label}</p>
-      <p className="font-semibold text-gray-800">{value}</p>
+      <p className="text-sm sm:text-sm text-gray-500">{label}</p>
+      <p className="font-semibold text-gray-800 text-base">{value}</p>
     </div>
   </div>
 );
@@ -54,12 +54,6 @@ const StudentDetailModal = ({ student, isOpen, onClose }) => {
   const [loadingLedger, setLoadingLedger] = useState(true);
 
   useEffect(() => {
-    console.log(
-      "5. [StudentDetailModal] useEffect triggered. isOpen:",
-      isOpen,
-      "Student:",
-      student?.name
-    );
     if (isOpen && student) {
       const fetchLedger = async () => {
         setLoadingLedger(true);
@@ -68,14 +62,10 @@ const StudentDetailModal = ({ student, isOpen, onClose }) => {
           const config = {
             headers: { Authorization: `Bearer ${adminInfo.token}` },
           };
-          console.log(
-            `6. [StudentDetailModal] Fetching ledger for student ID: ${student._id}`
-          );
           const { data } = await axios.get(
             `/api/reports/student-meal-ledger/${student._id}`,
             config
           );
-          console.log("7. [StudentDetailModal] Ledger API returned:", data);
           setLedger(data.ledger);
         } catch (error) {
           console.error("Failed to fetch meal ledger", error);

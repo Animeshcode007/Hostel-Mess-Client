@@ -22,7 +22,7 @@ function HomePage() {
       <div className="relative z-10 flex flex-col min-h-screen text-white">
         <Header />
 
-        <main className="flex-grow flex flex-col items-center justify-center">
+        <main className="flex-grow flex flex-col items-center justify-center p-4">
           <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
             <button
               onClick={() => openModal("instructions")}
@@ -42,14 +42,14 @@ function HomePage() {
           </div>
         </main>
 
-        <footer className="text-center p-4 text-white font-semibold">
+        <footer className="text-center p-4 text-white font-semibold text-sm sm:text-base">
           On Sunday, food will be available only in the morning
         </footer>
       </div>
 
       <button
         onClick={() => openModal("issue")}
-        className="raise-issue-button fixed bottom-6 left-6 z-20"
+        className="raise-issue-button fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-20"
       >
         Raise An Issue
       </button>

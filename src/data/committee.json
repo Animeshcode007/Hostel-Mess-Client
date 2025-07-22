@@ -2,21 +2,21 @@
   {
     "name": "Dr. GL Prajapati",
     "role": "Chief Warden",
-    "imageUrl": "/committee/member1.webp"
+    "imageUrl": "/member1.jpg"
   },
   {
     "name": "VIjay Karma",
     "role": "Hostel Warden",
-    "imageUrl": "/committee/member2.webp"
+    "imageUrl": "/member2.jpg"
   },
   {
     "name": "Amit Mittal",
     "role": "Hostel Warden",
-    "imageUrl": "/committee/member3.webp"
+    "imageUrl": "/member3.jpg"
   },
   {
     "name": "Lavish Sharma",
     "role": "Mess Owner",
-    "imageUrl": "/committee/member4.webp"
+    "imageUrl": "/member4.jpg"
   }
 ]

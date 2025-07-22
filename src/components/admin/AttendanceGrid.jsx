@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import DatePicker from "react-datepicker";
 import { Check, Loader2 } from "lucide-react";
 
 const AttendanceGrid = ({ students, onViewDetails, onAttendanceChange }) => {
@@ -76,7 +77,6 @@ const AttendanceGrid = ({ students, onViewDetails, onAttendanceChange }) => {
         };
       });
       if (onAttendanceChange) {
-        console.log("3. [AttendanceGrid] onAttendanceChange CALLED.");
         onAttendanceChange();
       }
     } catch (error) {

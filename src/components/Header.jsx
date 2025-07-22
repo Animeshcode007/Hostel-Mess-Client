@@ -4,21 +4,22 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="absolute top-0 left-0 right-0 z-20 bg-white/95 text-gray-800 shadow-md">
-      <div className="container mx-auto flex justify-between items-center p-3">
-        <div className="flex items-center space-x-3">
+      <div className="container mx-auto flex justify-between items-center p-2 sm:p-3">
+        <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
           <img
             src="/logo.png"
             alt="IET DAVV Logo"
-            className="h-12 w-12"
+            className="h-10 w-10 sm:h-12 sm:w-12"
           />
-          <span className="text-xl sm:text-2xl font-bold text-green-800 tracking-wide">
+          <span className="font-bold text-green-800 tracking-wide text-base sm:text-xl md:text-2xl">
             IET DAVV HOSTEL MESS
           </span>
-        </div>
-        <div className="flex items-center space-x-6">
+        </Link>
+
+        <div className="flex items-center space-x-2 sm:space-x-4">
           <Link
             to="/admin/login"
-            className="bg-gray-800 text-white px-5 py-2 rounded-full font-semibold hover:bg-gray-700 transition-colors duration-300 shadow-sm"
+            className="flex-shrink-0 bg-gray-800 text-white px-3 py-1.5 sm:px-5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm"
           >
             Admin login
           </Link>
