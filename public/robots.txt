@@ -1,0 +1,13 @@
+# Allow all user agents (crawlers)
+User-agent: *
+
+# Allow them to crawl everything
+Allow: /
+
+# Disallow them from crawling the admin and student login pages
+Disallow: /admin/login
+Disallow: /login
+Disallow: /dashboard
+
+# Point to your sitemap (replace with your actual domain)
+Sitemap: https://hostel-mess-client-lbh8vboq7-animeshcode007s-projects.vercel.app/sitemap.xml
