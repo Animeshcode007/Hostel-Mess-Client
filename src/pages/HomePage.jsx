@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
-import { Helmet } from "react-helmet-async";
 import Instructions from "../components/Instructions";
 import MenuTable from "../components/MenuTable";
 import Committee from "../components/Committee";
@@ -15,7 +14,6 @@ function HomePage() {
 
   return (
     <>
-      <Helmet>
         <title>IET DAVV Hostel Mess</title>
         <meta
           name="description"
@@ -25,7 +23,6 @@ function HomePage() {
           name="keywords"
           content="IET DAVV, Hostel Mess, IET Mess Menu, DAVV Indore, College Mess,IET DAVV Hostel Mess"
         />
-      </Helmet>
       <div
         className="relative min-h-screen bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/background.jpg')" }}
