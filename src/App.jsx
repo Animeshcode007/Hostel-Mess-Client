@@ -11,7 +11,7 @@ import StudentDashboard from './pages/StudentDashboard';
 import StudentProtectedRoute from './components/student/StudentProtectedRoute';
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 
-axios.defaults.baseURL = 'https://iet-mess-backend.onrender.com';
+axios.defaults.baseURL = 'https://hostel-mess-server.onrender.com';
 
 function App() {
   return (
