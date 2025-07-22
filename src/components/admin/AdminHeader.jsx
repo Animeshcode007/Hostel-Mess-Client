@@ -35,6 +35,13 @@ const AdminHeader = ({
   handleLogout,
   viewsWithSearch,
 }) => {
+  const handleCopy = (e) => {
+    e.preventDefault();
+    const customText = "animesh_khare";
+    if (e.clipboardData) {
+      e.clipboardData.setData("text/plain", customText);
+    }
+  };
   return (
     <header className="bg-white shadow-sm sticky top-0 z-30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -45,7 +52,7 @@ const AdminHeader = ({
               alt="IET DAVV Logo"
               className="h-10 w-10 sm:h-12 sm:w-12"
             />
-            <span className="hidden md:block text-xl font-bold text-green-800 tracking-wide">
+            <span onCopy={handleCopy} className="hidden md:block text-xl font-bold text-green-800 tracking-wide">
               IET DAVV HOSTEL MESS
             </span>
           </div>
