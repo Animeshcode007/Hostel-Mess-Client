@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import axios from 'axios';
 
 import HomePage from "./pages/HomePage";
 import AdminLogin from "./pages/AdminLogin";
@@ -9,6 +10,8 @@ import StudentLogin from './pages/StudentLogin';
 import StudentDashboard from './pages/StudentDashboard';
 import StudentProtectedRoute from './components/student/StudentProtectedRoute';
 import ProtectedRoute from "./components/admin/ProtectedRoute";
+
+axios.defaults.baseURL = 'https://iet-mess-backend.onrender.com';
 
 function App() {
   return (
