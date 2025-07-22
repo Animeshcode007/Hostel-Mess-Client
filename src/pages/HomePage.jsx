@@ -14,15 +14,19 @@ function HomePage() {
 
   return (
     <>
-        <title>IET DAVV Hostel Mess</title>
-        <meta
-          name="description"
-          content="View the official weekly menu, important instructions, and committee details for the IET DAVV Hostel Mess. Raise issues and stay updated with mess information."
-        />
-        <meta
-          name="keywords"
-          content="IET DAVV, Hostel Mess, IET Mess Menu, DAVV Indore, College Mess,IET DAVV Hostel Mess"
-        />
+      <title>IET DAVV Hostel Mess</title>
+      <meta
+        name="description"
+        content="View the official weekly menu, important instructions, and committee details for the IET DAVV Hostel Mess. Raise issues and stay updated with mess information."
+      />
+      <meta
+        name="keywords"
+        content="IET DAVV, Hostel Mess, IET Mess Menu, DAVV Indore, College Mess,IET DAVV Hostel Mess"
+      />
+      <meta
+        name="google-site-verification"
+        content="ShXDqnzfNbM2uOq98YXpBG1-R3kgmYmwZRVdS8iLVBE"
+      />
       <div
         className="relative min-h-screen bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/background.jpg')" }}
