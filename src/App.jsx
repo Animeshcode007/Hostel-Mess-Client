@@ -5,6 +5,9 @@ import { Toaster } from "react-hot-toast";
 import HomePage from "./pages/HomePage";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import StudentLogin from './pages/StudentLogin';
+import StudentDashboard from './pages/StudentDashboard';
+import StudentProtectedRoute from './components/student/StudentProtectedRoute';
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 
 function App() {
@@ -34,7 +37,15 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-
+        <Route path="/login" element={<StudentLogin />} />
+        <Route 
+          path="/dashboard" 
+          element={
+            <StudentProtectedRoute>
+              <StudentDashboard />
+            </StudentProtectedRoute>
+          } 
+        />
         <Route
           path="/admin/dashboard"
           element={

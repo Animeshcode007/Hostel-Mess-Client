@@ -57,6 +57,8 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
   const [newEndDate, setNewEndDate] = useState(null);
   const [newMessStartDate, setNewMessStartDate] = useState(new Date());
   const [newMessEndDate, setNewMessEndDate] = useState(null);
+  const [newEmail, setNewEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
   const openRenewModal = (student) => {
     setRenewingStudent(student);
@@ -106,6 +108,8 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
       const payload = {
         name: newName,
         rollNumber: newRollNumber,
+        email: newEmail,
+        password: newPassword,
         messStartDate: toYYYYMMDD(newMessStartDate),
         messEndDate: toYYYYMMDD(newMessEndDate),
       };
@@ -273,6 +277,28 @@ const StudentManager = ({ students, onUpdate, onViewDetails }) => {
               type="text"
               value={newRollNumber}
               onChange={(e) => setNewRollNumber(e.target.value)}
+              className="w-full p-2 border rounded-md mt-1"
+              required
+            />
+          </div>
+          <div>
+            <label className="text-sm font-medium text-gray-700">Email</label>
+            <input
+              type="email"
+              value={newEmail}
+              onChange={(e) => setNewEmail(e.target.value)}
+              className="w-full p-2 border rounded-md mt-1"
+              required
+            />
+          </div>
+          <div>
+            <label className="text-sm font-medium text-gray-700">
+              Initial Password
+            </label>
+            <input
+              type="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
               className="w-full p-2 border rounded-md mt-1"
               required
             />

@@ -18,10 +18,10 @@ const Header = () => {
 
         <div className="flex items-center space-x-2 sm:space-x-4">
           <Link
-            to="/admin/login"
+            to="/login"
             className="flex-shrink-0 bg-gray-800 text-white px-3 py-1.5 sm:px-5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm"
           >
-            Admin login
+            Login
           </Link>
           <div className="hidden md:block text-right">
             <div className="text-xs font-bold text-gray-600">MESS OWNER</div>
